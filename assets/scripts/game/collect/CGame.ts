@@ -24,12 +24,12 @@ export default class CGame extends cc.Component {
     @property([cc.SpriteFrame])
     sfpPieceMask:cc.SpriteFrame[] = [];
 
-    private _col:number = 3;
-    private _row:number = 3;
-    private _bgWidth:number = 734;
-    private _bgHeight:number = 425;
+    private _col:number = 2;
+    private _row:number = 2;
+    private _bgWidth:number = 754;
+    private _bgHeight:number = 445;
     private _piecePos:any[] = [];//拼图位置
-    private _mgrScale:number = 0.37;//管理器上缩放
+    private _mgrScale:number = 0.5;//管理器上缩放
     private items: any[];
     private curTexture: any;
 
@@ -55,8 +55,8 @@ export default class CGame extends cc.Component {
         let count:number = 0;
         let offset:number = 0;
         let itemIndex = 0;
-        let itemWidth = 734 / 3;
-        let itemHeight = 425 / 3;
+        let itemWidth = 734 / 2;
+        let itemHeight = 425 / 2;
         for(let i = 0; i < this._row; i++){
             for(let j = 0; j < this._col; j++){
                 let node = cc.instantiate(this.prefabPiece);
@@ -86,8 +86,8 @@ export default class CGame extends cc.Component {
                 }
             }
         }
-        for (let l = 0; l < 3; l++) {
-            for (let r = 0; r < 3; r++) {
+        for (let l = 0; l < 2; l++) {
+            for (let r = 0; r < 2; r++) {
                 let item = this.items[itemIndex];
                 const cfg = {
                     texture: this.curTexture,
